@@ -22,3 +22,16 @@ cc_library_static {
 
     export_include_dirs: ["linux/include/linux/"],
 }
+
+cc_binary {
+    name: "xzminidec",
+    srcs: [
+        "userspace/xzminidec.c",
+    ],
+    cflags: [
+        "-DXZ_USE_CRC64",
+    ],
+    static_libs: [
+        "libxz",
+    ],
+}
